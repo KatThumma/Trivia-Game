@@ -1,5 +1,6 @@
 $('#start').on('click', function(){
     $('#start').remove();
+    game.loadQuestion();
 })
 
 var questions = [{
@@ -26,10 +27,19 @@ var game = {
     correct:0,
     incorrect:0,
     countdown: function(){
-
+        game.counter--;
+        $('#counter').html(game.counter);
+        if(game.counter<=0){
+            console.log("time up!");
+            game.timeUp();
+        }
     },
     loadQuestion: function(){
-
+        time = setInterval(game.countdown,1000);
+        $('#subwrapper').html('<h2>'+question[game.currentQuestion].question+'</h2>');
+        for(var i=0;i<questions[game.currentQuestion].answers.length;i++){
+            $('#subwrapper').append('<button class="answer-button"id="button-'+i+'" data-name="'+questions[game.currentQuestions].answers[i]+'">'+questions[game.currentQuestion].answers[i]+'</button>');
+        }
     },
     nextQuestion: function(){
 
