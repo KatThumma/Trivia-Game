@@ -1,0 +1,12 @@
+body {
+    background-image: url("https://cdn.pixabay.com/photo/2014/02/19/16/06/curtain-269920_960_720.jpg");
+    background-color: #cccccc;
+    font-family: 'Cinzel Decorative', cursive;
+    color: rgb(214, 164, 91);
+
+}
+
+#wrapper {
+    text-align: center;
+    margin: 10px 200px;
+}
